@@ -1,31 +1,38 @@
-
-
+html
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Barcode Page</title>
-	<script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+	<title>Munirah Almadhi CV</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			text-align: center;
+		}
+		.btn {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 18px;
+			text-align: center;
+			text-decoration: none;
+		}
+		.btn:hover {
+			background-color: #3e8e41;
+		}
+	</style>
 </head>
 <body>
-	<div id="barcode"></div>
-	<div id="options">
-		<h3>Choose an option:</h3>
-		<button onclick="window.open('file1.pdf')">Option 1</button>
-		<button onclick="window.open('file2.pdf')">Option 2</button>
-	</div>
-	<script>
-		// Generate barcode with link to options page
-		var url = "http://example.com/options.html";
-		JsBarcode("#barcode", url, { format: "CODE128", displayValue: false });
-
-		// Open PDF files on button click
-		document.getElementById("options").addEventListener("click", function(e) {
-			if (e.target.tagName === "BUTTON") {
-				e.preventDefault();
-				window.open(e.target.getAttribute("onclick").match(/'(.*?)'/)[1]);
-				return false;
-			}
-		});
-	</script>
+	<h1>Open PDF Files</h1>
+	<a href="cv-ar.pdf" target="_blank" class="btn">السيرة الذاتية عربي</a>
+	<a href="cv-en.pdf" target="_blank" class="btn">English CV</a>
 </body>
 </html>
